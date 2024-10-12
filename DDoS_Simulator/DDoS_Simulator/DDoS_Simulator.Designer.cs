@@ -218,6 +218,7 @@
             this.btn_Start.TabIndex = 12;
             this.btn_Start.Text = "STAR";
             this.btn_Start.UseVisualStyleBackColor = false;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // btn_reset
             // 
@@ -287,6 +288,7 @@
             this.btn_Stop.TabIndex = 12;
             this.btn_Stop.Text = "STOP";
             this.btn_Stop.UseVisualStyleBackColor = false;
+            this.btn_Stop.Click += new System.EventHandler(this.btn_Stop_Click);
             // 
             // label_Ping
             // 
