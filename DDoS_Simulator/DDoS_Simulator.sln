@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDoS_Simulator", "DDoS_Simulator\DDoS_Simulator.csproj", "{C47C539D-F312-4A1A-BB22-A838E74B38B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C47C539D-F312-4A1A-BB22-A838E74B38B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47C539D-F312-4A1A-BB22-A838E74B38B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47C539D-F312-4A1A-BB22-A838E74B38B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47C539D-F312-4A1A-BB22-A838E74B38B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B742DF14-93B3-4223-9C9F-671C26FB3492}
+	EndGlobalSection
+EndGlobal
