@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -129,6 +130,40 @@ namespace DDoS_Simulator
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private CancellationTokenSource cts;
+        private async void btn_Start_Click(object sender, EventArgs e)
+        {
+            if (radioButton_HEAD.Checked)
+            {
+                string targetUrl = txt_URL.Text;
+                string proxyPath = label_pathToListProxy.Text;
+                int multiple = 10; // Thay đổi số lượng yêu cầu gửi mỗi proxy tùy theo nhu cầu của bạn
+
+                cts = new CancellationTokenSource(); // Khởi tạo CancellationTokenSource
+                var headAttack = new head_attack(targetUrl, proxyPath, multiple, listBox_Status); // Đảm bảo listBox_Status là tham số thứ 4
+
+                listBox_Status.Items.Add("Bắt đầu tấn công HEAD...");
+
+                try
+                {
+                    await headAttack.ExecuteAttack(cts.Token);
+                }
+                catch (OperationCanceledException)
+                {
+                    listBox_Status.Items.Add("Tấn công đã dừng.");
+                }
+                catch (Exception ex)
+                {
+                    listBox_Status.Items.Add($"Lỗi: {ex.Message}");
+                }
+            }
+        }
+
+        private void btn_Stop_Click(object sender, EventArgs e)
+        {
+            cts?.Cancel();
         }
     }
 }
