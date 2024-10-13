@@ -58,7 +58,7 @@
     <Compile Include="DnsAmplificationAttack.cs" />
     <Compile Include="DnsAmplification_openDNS.cs" />
     <Compile Include="DnsQuery.cs" />
-    <Compile Include="DnsResolver.cs" />
+    <Compile Include="DnsChecker.cs" />
     <Compile Include="DNS_Amplification.cs">
       <SubType>Form</SubType>
     </Compile>
