@@ -1,12 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
-namespace DDoS_Simulator
+public class DnsQuery
 {
-    internal class DnsQuery
+    private string dnsListPath;
+
+    public DnsQuery(string dnsListPath)
     {
+        this.dnsListPath = dnsListPath;
+    }
+
+    public List<string> LoadDnsServers()
+    {
+        if (!File.Exists(dnsListPath))
+        {
+            throw new FileNotFoundException("DNS list file not found.", dnsListPath);
+        }
+
+        return new List<string>(File.ReadAllLines(dnsListPath));
     }
 }

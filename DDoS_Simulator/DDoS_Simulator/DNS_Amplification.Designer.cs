@@ -40,6 +40,9 @@
             this.btn_openListDNS = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label_pathToListDNS = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_packetSize = new System.Windows.Forms.TextBox();
+            this.btn_checkDns = new System.Windows.Forms.Button();
             this.panel_dns.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +116,7 @@
             this.btn_dnsStop.TabIndex = 46;
             this.btn_dnsStop.Text = "STOP";
             this.btn_dnsStop.UseVisualStyleBackColor = false;
+            this.btn_dnsStop.Click += new System.EventHandler(this.btn_dnsStop_Click);
             // 
             // btn_dnsStart
             // 
@@ -124,10 +128,11 @@
             this.btn_dnsStart.TabIndex = 45;
             this.btn_dnsStart.Text = "STAR";
             this.btn_dnsStart.UseVisualStyleBackColor = false;
+            this.btn_dnsStart.Click += new System.EventHandler(this.btn_dnsStart_Click);
             // 
             // btn_openListDNS
             // 
-            this.btn_openListDNS.Location = new System.Drawing.Point(160, 93);
+            this.btn_openListDNS.Location = new System.Drawing.Point(160, 89);
             this.btn_openListDNS.Name = "btn_openListDNS";
             this.btn_openListDNS.Size = new System.Drawing.Size(167, 23);
             this.btn_openListDNS.TabIndex = 48;
@@ -138,7 +143,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 98);
+            this.label1.Location = new System.Drawing.Point(12, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(147, 13);
             this.label1.TabIndex = 41;
@@ -147,17 +152,46 @@
             // label_pathToListDNS
             // 
             this.label_pathToListDNS.AutoSize = true;
-            this.label_pathToListDNS.Location = new System.Drawing.Point(12, 133);
+            this.label_pathToListDNS.Location = new System.Drawing.Point(12, 128);
             this.label_pathToListDNS.Name = "label_pathToListDNS";
             this.label_pathToListDNS.Size = new System.Drawing.Size(88, 13);
             this.label_pathToListDNS.TabIndex = 49;
             this.label_pathToListDNS.Text = "Path to DNS list: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Packet size: ";
+            // 
+            // txt_packetSize
+            // 
+            this.txt_packetSize.Location = new System.Drawing.Point(160, 159);
+            this.txt_packetSize.Name = "txt_packetSize";
+            this.txt_packetSize.Size = new System.Drawing.Size(167, 20);
+            this.txt_packetSize.TabIndex = 51;
+            // 
+            // btn_checkDns
+            // 
+            this.btn_checkDns.Location = new System.Drawing.Point(15, 195);
+            this.btn_checkDns.Name = "btn_checkDns";
+            this.btn_checkDns.Size = new System.Drawing.Size(75, 23);
+            this.btn_checkDns.TabIndex = 52;
+            this.btn_checkDns.Text = "Check DNS";
+            this.btn_checkDns.UseVisualStyleBackColor = true;
+            this.btn_checkDns.Click += new System.EventHandler(this.btn_checkDns_Click);
             // 
             // DNS_Amplification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 463);
+            this.Controls.Add(this.btn_checkDns);
+            this.Controls.Add(this.txt_packetSize);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label_pathToListDNS);
             this.Controls.Add(this.btn_openListDNS);
             this.Controls.Add(this.panel_dns);
@@ -192,5 +226,8 @@
         private System.Windows.Forms.Button btn_openListDNS;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_pathToListDNS;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_packetSize;
+        private System.Windows.Forms.Button btn_checkDns;
     }
 }

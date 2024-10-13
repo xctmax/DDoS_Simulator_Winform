@@ -31,7 +31,7 @@ namespace DDoS_Simulator
             {
                 // Đọc tất cả các dòng trong tệp
                 string[] lines = File.ReadAllLines(filePath);
-                return lines.Length; // Trả về số lượng dòng (proxy)
+                return lines.Length; // Trả về số lượng dòng (DNS)
             }
             catch (Exception ex)
             {
