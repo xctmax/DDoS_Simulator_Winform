@@ -55,8 +55,24 @@
     <Compile Include="DDoS_Simulator.Designer.cs">
       <DependentUpon>DDoS_Simulator.cs</DependentUpon>
     </Compile>
+    <Compile Include="DnsAmplificationAttack.cs" />
+    <Compile Include="DnsAmplification_openDNS.cs" />
+    <Compile Include="DnsQuery.cs" />
+    <Compile Include="DnsResolver.cs" />
+    <Compile Include="DNS_Amplification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DNS_Amplification.Designer.cs">
+      <DependentUpon>DNS_Amplification.cs</DependentUpon>
+    </Compile>
     <Compile Include="down_proxy.cs" />
-    <Compile Include="head_attack.cs" />
+    <Compile Include="HeadAttack.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="open_proxy.cs" />
     <Compile Include="post_attack.cs" />
     <Compile Include="Program.cs" />
@@ -64,6 +80,12 @@
     <Compile Include="slow_attack.cs" />
     <EmbeddedResource Include="DDoS_Simulator.resx">
       <DependentUpon>DDoS_Simulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DNS_Amplification.resx">
+      <DependentUpon>DNS_Amplification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

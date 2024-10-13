@@ -42,13 +42,13 @@ namespace DDoS_Simulator
 
                 if (pingTime >= 0)
                 {
-                    label_Ping.Text = $"{pingTime} ms";  // Gán kết quả vào label_Ping
-                    listBox_Status.Items.Add($"Ping to {url}: {pingTime} ms");  // Hiển thị trên ListBox trạng thái
+                    label_Ping.Text = $"Ping: {pingTime} ms";
+                    listBox_checkProxy.Items.Add($"Ping to {url}: {pingTime} ms");
                 }
                 else
                 {
                     label_Ping.Text = "URL không hoạt động";
-                    listBox_Status.Items.Add($"Ping failed for {url}");
+                    listBox_checkProxy.Items.Add($"Ping failed for {url}");
                 }
             }
             else
@@ -67,7 +67,7 @@ namespace DDoS_Simulator
                 label_pathToListProxy.Text = filePath; // Cập nhật label với đường dẫn tệp đã chọn
 
                 int proxyCount = proxyOpener.CountProxies(filePath); // Đếm số lượng proxy trong tệp
-                listBox_Status.Items.Add($"Số lượng proxy: {proxyCount}"); // Hiển thị số lượng proxy trong ListBox
+                listBox_checkProxy.Items.Add($"Số lượng proxy: {proxyCount}"); // Hiển thị số lượng proxy trong ListBox
 
                 // Bật checkbox cho việc sử dụng proxy có sẵn
                 checkBox_availableUseProxy.Enabled = true;
@@ -91,8 +91,8 @@ namespace DDoS_Simulator
 
         private async void btn_downProxy_Click(object sender, EventArgs e)
         {
-            // Khởi tạo lớp down_proxy với listBox_Status
-            down_proxy proxyDownloader = new down_proxy(listBox_Status);
+            // Khởi tạo lớp down_proxy với listBox_checkProxy
+            down_proxy proxyDownloader = new down_proxy(listBox_checkProxy);
             await proxyDownloader.DownloadProxiesAsync(); // Gọi phương thức tải xuống proxy
         }
 
@@ -142,7 +142,7 @@ namespace DDoS_Simulator
                 int multiple = 10; // Thay đổi số lượng yêu cầu gửi mỗi proxy tùy theo nhu cầu của bạn
 
                 cts = new CancellationTokenSource(); // Khởi tạo CancellationTokenSource
-                var headAttack = new head_attack(targetUrl, proxyPath, multiple, listBox_Status); // Đảm bảo listBox_Status là tham số thứ 4
+                var headAttack = new HeadAttack(targetUrl, proxyPath, multiple, listBox_Status); // Đảm bảo listBox_Status là tham số thứ 4
 
                 listBox_Status.Items.Add("Bắt đầu tấn công HEAD...");
 

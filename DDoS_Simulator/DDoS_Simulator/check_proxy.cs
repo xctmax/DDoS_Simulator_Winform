@@ -67,7 +67,9 @@ public class check_proxy
         }
 
         // Hiển thị kết quả tổng kết
-        listBoxStatus.Items.Add($"{workingCount} số proxy dùng được; {notWorkingCount} proxy không dùng được.");
+        listBoxStatus.Items.Add($"Tổng số proxy: {notWorkingCount+workingCount}");
+        listBoxStatus.Items.Add($"{workingCount} proxy dùng được.");
+        listBoxStatus.Items.Add($"{notWorkingCount} proxy không dùng được.");
     }
 
     private async Task<string> CheckProxyAsync(string proxy)

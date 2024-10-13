@@ -16,7 +16,7 @@ namespace DDoS_Simulator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DDoS_Simulator());
+            Application.Run(new DNS_Amplification());
         }
     }
 }
